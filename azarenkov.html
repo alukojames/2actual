@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Азаренков Виталий - Профиль Массажиста | Арена Топ-Спин</title>
+  <meta name="description" content="Азаренков Виталий – массажист и тренер-реабилитолог в клубе Арена Топ-Спин. Специализация: спортивный, детский и тайский массаж.">
+  <meta name="keywords" content="массажист, тренер-реабилитолог, спортивный массаж, детский массаж, тайский массаж, Арена Топ-Спин">
+  <meta name="robots" content="index, follow">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-logo img {
+      height: 60px;
+      max-width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-shrink: 1;
+      min-width: 0;
+      position: relative;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #0055a4;
+    }
+
+    .contact-btn {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .contact-btn:hover {
+      background: #0055a4;
+      color: #ffffff;
+    }
+
+    .hamburger {
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      display: none;
+      margin-left: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .hamburger:hover {
+      transform: rotate(90deg);
+    }
+
+    .nav-utility {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .nav-links li.dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      padding: 0.75rem 0;
+      min-width: 300px;
+      z-index: 1001;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .dropdown-menu li {
+      padding: 0.5rem 1.5rem;
+    }
+
+    .dropdown-menu li a {
+      color: #333333;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      display: block;
+      white-space: normal;
+      text-transform: uppercase;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      color: #0055a4;
+      background: rgba(0, 85, 164, 0.1);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        z-index: 999;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .nav-links.show {
+        display: flex !important;
+      }
+
+      .nav-links li a {
+        font-size: 1.2rem;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links li .dropdown-menu {
+        position: static;
+        background: #ffffff;
+        box-shadow: none;
+        padding: 0.5rem 1rem;
+        display: none;
+        min-width: 100%;
+        border-radius: 4px;
+      }
+
+      .nav-links li.show-submenu .dropdown-menu {
+        display: block;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .custom-navbar {
+        padding: 0.8rem 1.5rem;
+      }
+
+      .nav-logo img {
+        height: 50px;
+      }
+
+      .contact-btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Content Sections */
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .masseuse-header {
+      display: flex;
+      gap: 2rem;
+      background: #f8faff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .portrait {
+      flex: 0 0 auto;
+    }
+
+    .portrait img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      background-image: linear-gradient(90deg, #bff9ea, #c0e4fe);
+      padding: 5px;
+      background-color: white;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .info h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      color: #1a1a1a;
+      border-bottom: 3px solid #0055a4;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .achievements {
+      list-style: none;
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .achievements li {
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.8;
+      color: #333333;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .achievements li::before {
+      content: '🏓';
+      position: absolute;
+      left: -1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .achievements li b {
+      color: #0055a4;
+      font-weight: 600;
+    }
+
+    .about-section {
+      background: #f8faff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards 0.1s;
+    }
+
+    .about-section h2 {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      color: #1a1a1a;
+      border-bottom: 3px solid #0055a4;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .about-section p {
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      line-height: 1.8;
+      color: #333333;
+    }
+
+    .qualification-gallery {
+      background: #f8faff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards 0.2s;
+    }
+
+    .qualification-gallery h2 {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      color: #1a1a1a;
+      border-bottom: 3px solid #0055a4;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 0 auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, border 0.3s ease;
+      background-image: linear-gradient(90deg, #bff9ea, #c0e4fe);
+      padding: 5px;
+      background-color: white;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      border: 2px solid #0055a4;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox.active {
+      display: flex;
+    }
+
+    #lightbox-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+      background-image: linear-gradient(90deg, #bff9ea, #c0e4fe);
+      padding: 5px;
+      background-color: white;
+    }
+
+    #lightbox-img:focus, .close:focus, .nav:focus {
+      outline: 2px solid #4da8ff;
+      outline-offset: 2px;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav.prev {
+      left: 1rem;
+    }
+
+    .nav.next {
+      right: 1rem;
+    }
+
+    .nav:hover {
+      color: #4da8ff;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .close:hover {
+      color: #4da8ff;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        padding: 1.5rem;
+      }
+
+      .masseuse-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+      }
+
+      .portrait img {
+        max-width: 250px;
+      }
+
+      .info h1, .about-section h2, .qualification-gallery h2 {
+        font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+        text-align: center;
+      }
+
+      .achievements li, .about-section p {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        font-size: 2rem;
+      }
+
+      .close {
+        font-size: 1.5rem;
+        padding: 0.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-wrapper {
+        padding: 1rem;
+      }
+
+      .masseuse-header, .about-section, .qualification-gallery {
+        padding: 1rem;
+      }
+
+      .portrait img {
+        max-width: 200px;
+      }
+
+      .gallery-grid {
+        max-width: 300px;
+      }
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a1a1a;
+      padding: 4rem 2rem 2rem;
+      color: #e0e0e0;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+
+    .footer-section {
+      text-align: left;
+    }
+
+    .footer-logo {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-description {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: #bbbbbb;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #4da8ff;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      display: inline-block;
+    }
+
+    .footer-social img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .footer-social img:hover {
+      transform: scale(1.2);
+      filter: brightness(1) hue-rotate(200deg);
+    }
+
+    .footer-contact p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover {
+      color: #4da8ff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #bbbbbb;
+      padding-top: 2rem;
+      border-top: 1px solid #333333;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        padding: 3rem 1.5rem 1.5rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="custom-navbar">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="TOPSPIN/logo_arena.png" alt="Арена Топ-Спин" loading="eager">
+      </a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="players.html">Игроки</a></li>
+      <li class="dropdown">
+        <a href="aboutclub.html" aria-haspopup="true" aria-expanded="false">О клубе</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Цены на услуги клуба настольного тенниса</a></li>
+          <li><a href="#">Расписание зала</a></li>
+          <li><a href="#">Подарочный сертификат</a></li>
+          <li><a href="#">Массаж</a></li>
+          <li><a href="#">Правила посещения</a></li>
+          <li><a href="#">Безопасность</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="tabletennis.html" aria-haspopup="true" aria-expanded="false">Настольный теннис</a>
+        <ul class="dropdown-menu">
+          <li><a href="about_table_tennis.html">О настольном теннисе</a></li>
+          <li><a href="table_tennis_club.html">Клуб настольного тенниса</a></li>
+          <li><a href="tables_rental.html">Аренда столов для настольного тенниса</a></li>
+          <li><a href="coaches.html">Тренеры по настольному теннису</a></li>
+          <li><a href="training_in_table_tennis.html">Тренировки по настольному теннису</a></li>
+          <li><a href="table_tennis_for_children.html">Настольный теннис для детей</a></li>
+          <li><a href="table_tennis_for_adults.html">Настольный теннис для взрослых</a></li>
+          <li><a href="tournaments.html">Турниры по настольному теннису</a></li>
+          <li><a href="corporate_table_tennis.html">Корпоративные мероприятия</a></li>
+          <li><a href="corp_com_tour.html">Корпоративный командный турнир</a></li>
+        </ul>
+      </li>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="tournaments.html">Турниры</a></li>
+    </ul>
+    <div class="nav-utility">
+      <a href="contacts.html" class="contact-btn">Контакты</a>
+      <button class="hamburger" id="navToggle" aria-label="Открыть/закрыть меню навигации" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="masseuse-header">
+      <div class="portrait">
+        <img src="TOPSPIN/azarenkov_vitalij_big_01.jpg" alt="Азаренков Виталий">
+      </div>
+      <div class="info">
+        <h1>Азаренков Виталий</h1>
+        <ul class="achievements">
+          <li>Массажист</li>
+          <li><b>Тренер-реабилитолог</b></li>
+          <li>Спортивный массаж</li>
+          <li>Детский массаж</li>
+          <li>Тайский массаж</li>
+          <li>Стаж работы более 13 лет</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="about-section">
+      <h2>О себе</h2>
+      <p>В этом 2020 году мне исполнится 31 год из которых 13 лет занимаюсь массажем. Всё началось в 2006 году с поступления, тогда ещё академию им П.Ф. Лесгафта. Мечта связать свою жизнь со спортом давно жила во мне, так как я родился в семье заслуженного тренера и с самого детства твердо решил пойти по его стопам. В 2007 году закончил первый курс университета и уже тогда стало очевидно, что спорт как процесс достижения высоких результатов связан с риском для здоровья, а физкультура наоборот заботиться о сохранении здоровье, как итог я решил скорректировать вектор своего обучения и выбирать учебные дисциплины позволяющие сохранить и приумножить здоровье человека. В этом же 2007 году закончил свои первые курсы классического и точечного массажа. В процессе обучения в университете прошел курс спортивного массажа с элементами мануальной терапии. Закончив в 2012 году кафедру физиологии со степенью магистр педагогических наук устроился работать тренером тренажёрного зала, где выбрал для себя оздоровительное направление, в этом мне очень помогал массаж. Комплексный подход позволял решать сложные вопросы и достигать высоких результатов в кратчайшие сроки. В 2012 прошел курсы тайского массажа на которых обратил внимание на важность растяжки для здоровья человека. В 2015 году закончил курсы детского массажа. В 2018 году после 6 лет успешной работы тренером и массажистом я на время отложил работу тренером для получения медицинского образования, сейчас я студент 2-го курса мед техникума №2 который специализируется на обучении массажу. Впереди ещё 2 года обучения и курсы медицинского массажа. На данный момент позиционирую себя как массажист, тренер-реабилитолог. Буду рад помочь: снять напряжение после тяжёлых тренировок, подготовиться к соревнованиям, устранить боли в спине и суставах, помогу в освоении сложных двигательных действий и в формировании правильной осанки.</p>
+    </section>
+
+    <section class="qualification-gallery">
+      <h2>Фотографии квалификации</h2>
+      <div class="gallery-grid">
+        <img src="TOPSPIN/azarenkov_vitalij_big_02.jpg" alt="Квалификация Азаренкова Виталия 1" data-index="0">
+        <img src="TOPSPIN/azarenkov_vitalij_big_03.jpg" alt="Квалификация Азаренкова Виталия 2" data-index="1">
+        <img src="TOPSPIN/azarenkov_vitalij_big_04.jpg" alt="Квалификация Азаренкова Виталия 3" data-index="2">
+        <img src="TOPSPIN/azarenkov_vitalij_big_05.jpg" alt="Квалификация Азаренкова Виталия 4" data-index="3">
+        <img src="TOPSPIN/azarenkov_vitalij_big_06.jpg" alt="Квалификация Азаренкова Виталия 5" data-index="4">
+        <img src="TOPSPIN/azarenkov_vitalij_big_07.jpg" alt="Квалификация Азаренкова Виталия 6" data-index="5">
+      </div>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-label="Просмотр фотографий квалификации">
+    <span class="nav prev" tabindex="0" aria-label="Предыдущее фото">❮</span>
+    <img id="lightbox-img" src="" alt="Просмотр фото" tabindex="0">
+    <span class="nav next" tabindex="0" aria-label="Следующее фото">❯</span>
+    <span class="close" aria-label="Закрыть лайтбокс" tabindex="0">✕</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="TOPSPIN/logo_arena.png" alt="Арена Топ-Спин" class="footer-logo" loading="lazy">
+        <p class="footer-description">
+          Арена Топ-Спин – ваш центр настольного тенниса, где страсть к игре сочетается с первоклассным оборудованием и профессиональным коучингом.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Быстрые ссылки</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="aboutclub.html">О клубе</a></li>
+          <li><a href="tabletennis.html">Настольный теннис</a></li>
+          <li><a href="tournaments.html">Турниры</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Контакты</h3>
+        <div class="footer-contact">
+          <p>Спортивный клуб «Арена Топ-Спин»</p>
+          <p>СПб, Левашовский пр., д. 13 А</p>
+          <p>Тел: <a href="tel:+78129428140" aria-label="Позвонить в Арена Топ-Спин">+7(812) 942-81-40</a></p>
+        </div>
+        <div class="footer-social">
+          <a href="https://vk.com/arena.topspin"><img src="TOPSPIN/vk-icon.svg" alt="VK" loading="lazy"></a>
+          <a href="https://www.instagram.com/scarenatopspin/"><img src="TOPSPIN/instagram-icon.svg" alt="Instagram" loading="lazy"></a>
+          <a href="https://www.youtube.com/channel/UCcJzy5K9osLLIifcMEmG4xw"><img src="TOPSPIN/youtube-icon.svg" alt="YouTube" loading="lazy"></a>
+          <a href="https://wa.me/79219428140"><img src="TOPSPIN/whatsapp-icon.svg" alt="WhatsApp" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2005-2025 © Все права защищены. Лицензирование
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar functionality
+      const hamburger = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+      const dropdowns = document.querySelectorAll('.nav-links li.dropdown');
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+          if (window.innerWidth <= 1024) {
+            e.preventDefault();
+            dropdown.classList.toggle('show-submenu');
+          }
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.custom-navbar');
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+        } else {
+          navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+        }
+      });
+
+      // Lightbox functionality
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const images = document.querySelectorAll('.gallery-grid img');
+      const closeBtn = document.querySelector('.close');
+      const prevBtn = document.querySelector('.nav.prev');
+      const nextBtn = document.querySelector('.nav.next');
+
+      const imageSources = Array.from(images).map(img => img.src);
+      const imageAlts = Array.from(images).map(img => img.alt);
+      let currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = imageSources[currentIndex];
+        lightboxImg.alt = imageAlts[currentIndex];
+        lightbox.classList.add('active');
+      }
+
+      function closeLightbox(event) {
+        event.stopPropagation();
+        lightbox.classList.remove('active');
+      }
+
+      function showPrevImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+        lightboxImg.src = imageSources[currentIndex];
+        lightboxImg.alt = imageAlts[currentIndex];
+      }
+
+      function showNextImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % imageSources.length;
+        lightboxImg.src = imageSources[currentIndex];
+        lightboxImg.alt = imageAlts[currentIndex];
+      }
+
+      images.forEach(img => {
+        img.addEventListener('click', () => {
+          openLightbox(parseInt(img.dataset.index));
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      prevBtn.addEventListener('click', showPrevImage);
+      prevBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          showPrevImage(e);
+        }
+      });
+      nextBtn.addEventListener('click', showNextImage);
+      nextBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          showNextImage(e);
+        }
+      });
+
+      closeBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          closeLightbox(e);
+        }
+      });
+
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          closeLightbox(event);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('active')) {
+          if (e.key === 'Escape') closeLightbox(e);
+          if (e.key === 'ArrowLeft') showPrevImage(e);
+          if (e.key === 'ArrowRight') showNextImage(e);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
